@@ -11,9 +11,9 @@
   type: email
   icon: 'fas fa-envelope'
   noblank: true
--
-  type: github
-  icon: 'fas fa-code-branch'
+#-
+#  type: github
+#  icon: 'fas fa-code-branch'
 -
   type: rss
   icon: 'fas fa-rss'
