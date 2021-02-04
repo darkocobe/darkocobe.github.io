@@ -15,9 +15,9 @@ timezone: Asia/Shanghai
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: I do Azure                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: The place to be   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -30,21 +30,21 @@ url: 'https://darkocobe.github.io'
 author: Darko Todoroski                  # change to your full name
 
 github:
-  username: github_username             # change to your github username
+  username: darkocobe             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: darkocobe            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Darko Todoroski                  # it will shows as the copyright owner in Footer
+  email: darko.t@outlook.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/darkocobe      # change to your twitter homepage
+    - https://github.com/darkocobe       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/darkotodoroski
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 # --------------------------
