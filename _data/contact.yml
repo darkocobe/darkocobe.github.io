@@ -1,16 +1,16 @@
 #  The contact options.
-
+# icons powered by <https://fontawesome.com/>
 -
   type: twitter
   icon: 'fab fa-twitter'
 -
   type: linkedin
-  icon: 'fab fa-linkedin-in'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/darkotodoroski/'                  # Fill with your Linkedin homepage
+  icon: 'fab fa-linkedin-in'
+  url:  'https://www.linkedin.com/in/darkotodoroski/'
 -
   type: email
   icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
+  noblank: true
 -
   type: github
   icon: 'fas fa-code-branch'
