@@ -1,7 +1,13 @@
 #  The date format
 
-tooltip: "%a, %b %e, %Y, %l:%M %p %z"
+#%a = Day of week
+#%b = Month
+#%e = Day
+#%Y = Year
+#%l:%M %p %z = Time AM/PM Hours from my time zone
+
+tooltip: "%a, %e %b %Y, %l:%M %p %z" #"%a, %b %e, %Y, %l:%M %p %z"
 
 post:
-  long: "%b %e, %Y"
+  long: "%e %b %Y" #"%b %e, %Y"
   short: "%b %e"
