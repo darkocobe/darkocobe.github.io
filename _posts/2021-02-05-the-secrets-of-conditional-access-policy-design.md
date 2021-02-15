@@ -1,5 +1,5 @@
 ---
-title: The secrets of Conditional Policy Design
+title: The secrets of Conditional Access Policy Design
 author: Darko Todoroski
 date: 2020-02-05 20:55:00 +0800
 categories: [Azure, Conditional Access]
