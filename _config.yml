@@ -17,7 +17,7 @@ timezone: Europe/Amsterdam
 # --------------------------
 title: I do Azure                          # the main title
 
-tagline: The place to be   # it will display as the sub-title
+tagline: I do, you do, we all do Azure   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
