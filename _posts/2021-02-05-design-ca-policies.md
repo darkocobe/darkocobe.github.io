@@ -1,17 +1,19 @@
 ---
-title: CA Design DOs and DON’T'S
+title: The secrets of Conditional Policy Design
 author: Darko Todoroski
 date: 2020-02-05 20:55:00 +0800
 categories: [Azure, Conditional Access]
-tags: [design, conditional access policy, guide]
+tags: [azure, azure ad, aad, ca, policies, bcdr, plan, build, operate, design, conditional access policy, guide, conditional access]
 pin: true
 ---
 
 These days Azure AD Conditional Policies are used by almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365). I recommend this lengthy blog post for everyone that has work to do with Conditional Access policies. No matter if you are a cloud architect, cloud engineer, or cloud support engineer, you will extend your knowledge and make proper decisions when you design your conditional access policies.
 
-Below I share essential information that you need to take into consideration during your conditional access project. Even if you already have a CA policy design or implemented them, you can find this article useful and adjust some of your practices.
+Below I share essential information that you need to take into consideration during your conditional access project. Even if you already have a CA policy design or implemented them, you can find this article useful and adjust some of your practices. This blog post is not where I will recommend which policies you should apply. It is an article where you will learn how to take a step back and think about the whole process, not just about the policies themselves.
 
-I divided the blog post into four sections (Plan, Dsign, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Throughout the article, I use the CA abbreviation for Conditional Access.
+I divided the blog post into four sections (Plan, Dsign, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Implementing CA policies is so easy that almost anyone can do it. The tricky part is when you start messing around things get trickier. That is why skipping the any project phases is not an option.
+
+Throughout the article, I use the CA abbreviation for Conditional Access.
 
 ## Plan
 
@@ -27,20 +29,63 @@ Instead, what I recommend is to build an organization-wide pilot program (ex. ea
 
 ## Design
 
+- **Start with the highest scope.**
+
+When you design CA policies, it is essential to detect similarities from the documented requirements. By similarities, I mean policies that you can apply to a full scope of users or applications. It is crucial to start from the higher scopes, and then create granular policies targeting smaller scope. Policies that you can apply to the whole organization is an example ( Enforce MFA registration for all users or Block legacy authentication for all users and all applications). These example policies apply to all users or applications in the organization. Once you cover the highest scopes, you can think about individual cases.
+You can as well categorize your users or applications based on similar criteria within your organization. You can create personas like Developers, Management, C-Level, Administrative employees, Departments, etc. For the applications, you can create categories like High, Medium, or Low sensitive applications. You can use as well Internal or External facing applications.
+
+- **Minimize the number of policies**
+
+If you want to simplify your design and do not have an ample amount of policies, you need to start with the highest scope or grouping first. I've seen many organizations with a massive amount of policies, and because of this, they become unmanageable even unpredictable. The worse case I've seen is an organization with 126 CA policies. After a redesign, we reduced the policy number to 18 only. If you can achieve the same results with less, then it is better. :) Of course, the number depends as well on the size of the organization. But I firmly believe that if you have more than 20-30 CA policies, you are doing something wrong, and you should go back to the drawing board.
+
+- **Build Rings for testing policies**
+
+I hope you remember the Microsoft Windows as a Service update strategy. If you do not remember, you can read more details about it here. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
+Once you familiarize yourself with this approach, you probably found the picture below. This picture shows how Microsoft is deploying Windows as a Service in separate Rings.
+
+**picture**
+
+The strategy here is to organize your pilot participants in Ring groups (Azure AD Cloud groups) to test your policies. So, design a couple of Rings, preferably not more than three. Of course, this depends on the size of your organization, but don't overcomplicate.  Once you design your deployment rings and inform pilot participants, you can use this Windows as a service idea to push the policies into production. You start with Ring 1 (a small set of users throughout the organization) to test your CA policy. Further, based on the feedback (telemetry and survey results) you proceed with extensive scope in Ring 2, Ring 3, and as a final step, you deploy to all users in production. Now you have a mechanism that will give you an idea of how the policies are working in your organization, do you have an impact, and if you do, it is easy to roll back with just removing the Ring group from the policy scope.
+
+- **Standardize your naming convention**
+
+When you have a considerable amount of policies naming conventions will be critical. A standardized naming convention will help you detect which policy is in production, the correct scope, the action, etc. When you dig inside Azure AD sign-in logs, it will be beneficial to have a good naming convention. From the policy name, you can identify why the policy applies or what should be the outcome. As long as you have a good naming convention that works for you, there is no poor choice. Microsoft has documentation with some naming convention proposal, but I extend this to my own.
+
+T(R#)/P-Conditions-
+
+P-Require_MFA-for-All_Users-All_Apps-when-on-External-network
+
+T-Block_Legacy_Authentication-for-R1-All_Apps
+T-Block_Legacy_Authentication-for-R2-All_Apps
+T-Block_Legacy_Authentication-for-R3-All_Apps
+P-Block_Legacy_Authentication-for-All_Users-All_Apps
+
+- **Plan your exclusions carefully**
+
+It was easy to lock down your access to the tenant in the past. These days thanks to the redesigned UI, it is difficult but not impossible. That is why it is critical to exclude the Emergency Break glass accounts from all block policies. Of course, the only exception here is the Block legacy authentication policy, which should apply to the Break glass accounts as well. Many organizations use groups to exclude break glass accounts from CA policies, but I'm not in favor of this approach. Using groups brings extra dependency on the exclusions, and that is group management privileges. If a user can get permission to modify group membership, that is potentially an option to exclude himself from CA policies too. To avoid this situation,  I would rather exclude two break glass accounts individually instead of as members of a group.
+Group exclusions can work when you have a big list of policy exceptions because you identified a problem. Group exclusion can work too, when you still use service accounts, and you need to exclude them from policies.
+Note Be aware that anyone who has the rights to modify the group membership can make exclusions from the policy. This way can be potential for misuse, and because of this, you should monitor group membership changes.
+
+- **Design for disruption**
+
+Disruption in cloud services sometimes can be a domino effect. That is why it is essential to design for disruption. In the past, we faced challenges to satisfy the MFA or network requirements in our policies. And interruptions do not always depend on Azure services. Apple or Android notification services can be down, Azure SMS or call providers can have disruption. Even your network (company internet or VPN) that is a requirement in policies can be unavailable. Because of all these corner cases, you need to design your CA policies for disruption.
+That means creating emergency access policies that you can activate in case of a disturbance. You will keep these policies disabled by default, but using the Emergency break glass accounts, can enable them to avoid end-user impact. In the case of MFA or network interruption, you enable CA policy that will skip this requirement, and your organization can continue working. You enable the emergency CA policy during major service interruptions, not small hiccups that the provider will resolve within minutes.
+These policies have a unique prefix "EMERGENCY" in their name.
+
 ## Build
 
 Finally, once you put all this on paper, have a good plan and design, it is time to start implementing it. As a general rule, you should never enable CA policies directly to the whole organization from the beginning.
 
+- **What-If tool as your friend**
+
 You should always start testing policies with the What-If tool and simulate the impact on your organization. Note: You need to be aware that What-If evaluates only the enabled (On) or enabled in (Report only) policies. In this case, if you want to use the tool on a smaller user scope, I would recommend to scope the CA policy to one test user and simulate the results for that test user to see the outcome before you go to the next step.
 
-Implementing CA policies is so easy that almost anyone can do it. The tricky part is when you start messing around without knowing what you do. And then things get trickier. That is why skipping the previous project phases is not an option. You don't want to implement policies that can have a bad end-user experience and destruct your project. Bad end-user experience can be a blocker of the project. Especially when you hit the C level in your organization, and they feel the awful user experience themselves. This approach can lead to frustrations and poor decisions. It is your responsibility to turn your end-users into advocates of your project.
+- **Always implement using the Ring strategy**
 
-I hope you remember the Microsoft Windows as a Service update strategy. If you do not remember, you can read more details about it here. This strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
-Once you familiarize yourself with this approach, you probably found the picture below. This picture shows how Microsoft is deploying Windows as a Service in separate Rings.
+You don't want to implement policies that can have a bad end-user experience and destruct your project. Bad end-user experience can be a blocker of the project. Especially when you hit the C level in your organization, and they feel the awful user experience themselves. This approach can lead to frustrations and poor decisions. It is your responsibility to turn your end-users into advocates of your project.
+This is why in the design phase I recommend to build Ring implementation strategy. Using the Ring methodology will lower the risk of disruption. If you decide to build Ring implementation strategy you need be sure that your process will get slower but at least will be robust. It is slower because once you implement a policy in a specific Ring you will need to wait at least a week or two to collect enough telemetry data or feedback to proceed further. On the other hand using this strategy you make sure that policies that are implemented in production are bullet proofed.
 
-** picture*
-
-The strategy here is to organize your pilot participants in Ring groups (Azure AD Cloud groups) to test your policies. So, design a couple of Rings, preferably not more than three. Of course, this depends on the size of your organization, but don't overcomplicate.  Once you design your deployment rings and inform pilot participants, you can use this Windows as a service idea to push the policies into production. You start with Ring 1 (a small set of users throughout the organization) to test your CA policy. Further, based on the feedback (telemetry and survey results) you proceed with extensive scope in Ring 2, Ring 3, and as a final step, you deploy to all users in production. Now you have a mechanism that will give you an idea of how the policies are working in your organization, do you have an impact, and if you do, it is easy to roll back with just removing the Ring group from the policy scope.
+- **Feedback and telemetry data is your gold**
 
 To collect feedback, you can use two techniques. One is to organize a survey. You can use Microsoft Forms which comes for free for every M365 customer. Ask your pilot users to provide their feedback not just about technical challenges but as well about their experience.
 The other technique is to collect telemetry data from the AAD logs and analyze it.
@@ -53,11 +98,17 @@ Once the telemetry data and the user's feedback are positive, you can move forwa
 
 Many organizations are ignoring this critical phase. Once implementation is over, it is crucial to manage and operate this solution as well. I've seen many examples where people want to show me their policies, and they wonder who created the rest of the policies, why policies are changed and not configured as they thought, etc.
 
-This challenge brings the RBAC to the table. It is critical to have control over who can create, modify, delete CA policies. As you remember, we said CA policies are your Identity firewall. You don't want everyone to be able to change your configuration. You don't want someone adding an exception to avoid policies applied. Good start the is the built-in role "????". This role will allow you to limit the people responsible for managing CA policies. I highly recommend you to use this role via PIM and with an approval process. This way will make sure that no-one will abuse the responsibilities and modify your policies.
+- **Delegate rights**
+
+This challenge brings the RBAC to the table. It is critical to have control over who can create, modify, delete CA policies. As you remember, we said CA policies are your Identity firewall. You don't want everyone to be able to change your configuration. You don't want someone adding an exception to avoid policies applied. Good start the is the Azure AD built-in role "Conditional Access Administrator". This role will allow you to limit the people responsible for managing CA policies. I highly recommend you to use this role via PIM and with an approval process. This way will make sure that no-one will abuse the responsibilities and modify your policies.
+
+- **Good visibility**
 
 On top of that detecting changes, play a giant part in the game. Every change should be controlled and properly planned. Azure AD stores audit logs for changes in CA. You need to keep these logs for a longer period so you can have full visibility. By default, Azure AD keeps the audit logs for 30 days only.
 
 Once you transfer your sign-in and audit logs to your Log Analytics workspace, you can analyze the CA policies using the built-in Conditional Acess Workbook. Microsoft provides this workbook default, and you can extend it with your scenarios. You can implement a workbook that presents changes in CA policies. As well you should notify your admins if someone performed an unauthorized adjustment.
+
+- **Configuration as a Code**
 
 CA policies are critical for protecting your cloud regardless of Azure infrastructure, M365, or Dynamics. Keep the management and monitoring tight and have control a hundred percent of the time.
 If you are serious about Infrastructure as Code, you can use M365 DSC for keeping your policies as code. This way, you can keep your CA configuration in the desired state. If you detect changes, you can audit or overwrite them. You can investigate more about M365 by going to the M365 DSC GitHub page.
