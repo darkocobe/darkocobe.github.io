@@ -7,21 +7,27 @@ tags: [azure, azure ad, aad, ca, policies, bcdr, plan, build, operate, design, c
 pin: true
 ---
 
-These days Azure AD Conditional Policies are used by almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365). I recommend this lengthy blog post for everyone that has work to do with Conditional Access policies. No matter if you are a cloud architect, cloud engineer, or cloud support engineer, you will extend your knowledge and make proper decisions when you design your conditional access policies.
+These days Azure AD Conditional Access policies are used by almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365). I recommend this lengthy blog post for everyone that has work to do with Conditional Access policies. No matter if you are a cloud architect, cloud engineer, or cloud support engineer, you will extend your knowledge and make proper decisions when you design your conditional access policies.
 
-Below I share essential information that you need to take into consideration during your conditional access project. Even if you already have a CA policy design or implemented them, you can find this article useful and adjust some of your practices. This blog post is not where I will recommend which policies you should apply. It is an article where you will learn how to take a step back and think about the whole process, not just about the policies themselves.
+I share essential information that you need to take into consideration during your conditional access implementation project. Even if you already have a Conditional Access policy design or implemented them, you can find this article useful and adjust some of your practices. This article is not where I will recommend which policies you should apply. It is an article where you will learn how to take a step back and think about the whole process, not just about the policies themselves.
 
-I divided the blog post into four sections (Plan, Dsign, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Implementing CA policies is so easy that almost anyone can do it. The tricky part is when you start messing around things get trickier. That is why skipping the any project phases is not an option.
+I divided the blog post into four sections (Plan, Dsign, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Implementing Conditional Access policies is so easy that almost anyone can do it. But when you start messing around, things can get trickier. That is why skipping any project phase is not an option.
 
-Throughout the article, I use the CA abbreviation for Conditional Access.
+> Throughout the article, I use the CA abbreviation for Conditional Access.
 
 ## Plan
 
-Every project starts with a plan. I know it sounds like a cliché, but having a plan is critical when you start designing conditional access policies. This plan can help you to make proper decisions and sometimes can save your day as well.
+Every project starts with a plan. I know it sounds like a cliché, but having a plan is critical when you start designing CA policies. This plan can help you to make proper decisions and sometimes can save your day as well.
+
+- **Right people for the right work**
 
 You need to involve the correct people that will work, participate and make decisions in this project. I've seen many examples where organizations implemented the CA policies ad-hoc because the IT department got an order to do so. But this approach most of the time can lead to disruption. Depends on the policy scope, you need to involve your architects (security, network), CISO, support desk, etc.
 
+- **Gather requirements**
+
 Once you have good people around you, you will need to collect and document their requirements. Everyone can share their opinion, and putting that on paper is crucial for you. You will need these requirements to make your design. You can have conditions that can be conflicting with each other. These conditions can cause one or the other department to have an impact. That is why for you, as an owner of the CA policies critical to understand, document, and guide the rest of the organization during the design and implement policies that will achieve everyone's requirements. Later on, in another blog post, I will show you an example of how you can use the requirements and translate them into the design.
+
+- **Build your Pilot program**
 
 During this stage of the project, you will organize pilot groups to test each planned policy. It is critical to choose your pilot groups accurately. I've seen many bad examples where organizations will pilot solutions within their IT organization, and once the pilot is successful, they will continue rolling out throughout the organization. This approach is deficient and has a lot of potential for failure. You can't test some scenarios within the IT organization. Imagine that you have an application used only within the HR department, and you want to protect it using CA policies. In this case, piloting within the IT organization will give you negative feedback.
 

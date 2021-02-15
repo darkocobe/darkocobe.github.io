@@ -20,9 +20,9 @@ title: I do Azure                          # the main title
 tagline: I do, you do, we all do Azure   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+IdoAzure.nl is a personal blog written by Microsoft employee,
+Darko Todoroski. The blog focuses on Azure, architecture,
+DevOps, Identity, etc. Occasionally some personal stories as well.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://darkocobe.github.io'
