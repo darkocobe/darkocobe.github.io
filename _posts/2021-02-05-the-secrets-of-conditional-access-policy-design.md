@@ -57,14 +57,26 @@ The strategy here is to organize your pilot participants in Ring groups (Azure A
 
 When you have a considerable amount of policies naming conventions will be critical. A standardized naming convention will help you detect which policy is in production, the correct scope, the action, etc. When you dig inside Azure AD sign-in logs, it will be beneficial to have a good naming convention. From the policy name, you can identify why the policy applies or what should be the outcome. As long as you have a good naming convention that works for you, there is no poor choice. Microsoft has documentation with some naming convention proposal, but I extend this to my own.
 
-T(R#)/P-Conditions-
+```
+|T/P-|Condition-|for-|Principal/R1-Cloud_App-|when-|Condtions|
+```
 
+Example for production policy:
+```
 P-Require_MFA-for-All_Users-All_Apps-when-on-External-network
+```
 
+Example for test policies during the Ring implementation
+```
 T-Block_Legacy_Authentication-for-R1-All_Apps
 T-Block_Legacy_Authentication-for-R2-All_Apps
 T-Block_Legacy_Authentication-for-R3-All_Apps
+```
+
+Transformed to production policy
+```
 P-Block_Legacy_Authentication-for-All_Users-All_Apps
+```
 
 - **Plan your exclusions carefully**
 
@@ -73,7 +85,7 @@ It was easy to lock down your access to the tenant in the past. These days thank
 
 Of course, the only exception here is the Block legacy authentication policy, which should apply to the Break glass accounts as well. Many organizations use groups to exclude break glass accounts from CA policies, but I'm not in favor of this approach. Using groups brings extra dependency on the exclusions, and that is group management privileges. If a user can get permission to modify group membership, that is potentially an option to exclude himself from CA policies too. To avoid this situation, I would rather exclude two break glass accounts individually instead of as members of a group.
 Group exclusions can work when you have a big list of policy exceptions because you identified a problem. Group exclusion can work too, when you still use service accounts, and you need to exclude them from policies.
->**Note** Be aware that anyone who has the rights to modify the group membership can make exclusions from the policy. This way can be potential for misuse, and because of this, you should monitor group membership changes.
+>**Note:** Be aware that anyone who has the rights to modify the group membership can make exclusions from the policy. This way can be potential for misuse, and because of this, you should monitor group membership changes.
 
 - **Design for disruption**
 
@@ -88,7 +100,7 @@ Finally, once you put all this on paper, have a good plan and design, it is time
 - **What-If tool as your friend**
 
 You should always start testing policies with the What-If tool and simulate the impact on your organization.
->**Note** You need to be aware that What-If evaluates only the enabled (On) or enabled in (Report only) policies.
+>**Note:** You need to be aware that What-If evaluates only the enabled (On) or enabled in (Report only) policies.
 In this case, if you want to use the tool on a smaller user scope, I would recommend to scope the CA policy to one test user and simulate the results for that test user to see the outcome before you go to the next step.
 
 - **Always implement using the Ring strategy**
