@@ -7,11 +7,11 @@ tags: [azure, azure ad, aad, ca, policies, bcdr, plan, build, operate, design, c
 pin: true
 ---
 
-These days Azure AD Conditional Access policies are used by almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365). I recommend this lengthy blog post for everyone that has work to do with Conditional Access policies. No matter if you are a cloud architect, cloud engineer, or cloud support engineer, you will extend your knowledge and make proper decisions when you design your conditional access policies.
+Almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365) utilizes Azure AD Conditional Access policies. This lengthy blog post is for everyone that works with Conditional Access policies. No matter your role will extend your knowledge to make proper decisions when you design your conditional access policies.
 
-I share essential information that you need to take into consideration during your conditional access implementation project. Even if you already have a Conditional Access policy design or implemented them, you can find this article useful and adjust some of your practices. This article is not where I will recommend which policies you should apply. It is an article where you will learn how to take a step back and think about the whole process, not just about the policies themselves.
+Even if you already have a Conditional Access policy design or implemented one, you will find this article useful and adjust some of your practices. In this article, I do not recommend which policies you should apply. You will learn how to take a step back and think about the whole process, not just about the policies themselves.
 
-I divided the blog post into four sections (Plan, Dsign, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Implementing Conditional Access policies is so easy that almost anyone can do it. But when you start messing around, things can get trickier. That is why skipping any project phase is not an option.
+I divided the blog post into four sections (Plan, Design, Build, Operate). It is crucial to read every section of it and follow them in order during your project. Implementing Conditional Access policies is so easy that almost anyone can do it. But when you start messing around, things can get complicated. That is why skipping any project phase is not an option.
 
 > Throughout the article, I use the CA abbreviation for Conditional Access.
 
