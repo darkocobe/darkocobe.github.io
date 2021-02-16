@@ -46,9 +46,10 @@ If you want to simplify your design and do not have an ample amount of policies,
 
 - **Build Rings for testing policies**
 
-I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it here. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
-The picture below shows how Microsoft is deploying Windows as a Service in separate Rings.
-**picture**
+I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it [here](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview). But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
+The picture below shows how Microsoft is deploying Windows 10 Windows as a Service in separate Rings.
+
+![windows 10 - Windows as a Service](/assets/posts/windows-as-a-service-rings.jpg)
 
 The strategy here is to organize your pilot participants in Ring groups (Azure AD Cloud groups) to test your policies. So, design a couple of Rings, preferably not more than three. Of course, this depends on the size of your organization, but don't overcomplicate. Once you design your deployment rings and inform pilot participants, you can use this Windows as a service idea to push the policies into production. You start with Ring 1 (a small set of users throughout the organization) to test your CA policy. Further, based on the outcome (telemetry and survey results) you proceed with extensive scope in Ring 2, Ring 3, and as a final step, you deploy to all users in production. Now you have a mechanism that will give you an idea of how the policies are working in your organization, do you have an impact, and if you do, it is easy to roll back with just removing the Ring group from the policy scope.
 
@@ -67,7 +68,10 @@ P-Block_Legacy_Authentication-for-All_Users-All_Apps
 
 - **Plan your exclusions carefully**
 
-It was easy to lock down your access to the tenant in the past. These days thanks to the redesigned UI, it is difficult but not impossible. That is why it is critical to exclude the Emergency Break glass accounts from all block policies. If you don't know what Emergency Break glass accounts are, check this documentation. Of course, the only exception here is the Block legacy authentication policy, which should apply to the Break glass accounts as well. Many organizations use groups to exclude break glass accounts from CA policies, but I'm not in favor of this approach. Using groups brings extra dependency on the exclusions, and that is group management privileges. If a user can get permission to modify group membership, that is potentially an option to exclude himself from CA policies too. To avoid this situation, I would rather exclude two break glass accounts individually instead of as members of a group.
+It was easy to lock down your access to the tenant in the past. These days thanks to the redesigned UI, it is difficult but not impossible. That is why it is critical to exclude the Emergency Break glass accounts from all block policies.
+>If you don't know what Emergency Break glass accounts are, check this [documentation](https://docs.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access).
+
+Of course, the only exception here is the Block legacy authentication policy, which should apply to the Break glass accounts as well. Many organizations use groups to exclude break glass accounts from CA policies, but I'm not in favor of this approach. Using groups brings extra dependency on the exclusions, and that is group management privileges. If a user can get permission to modify group membership, that is potentially an option to exclude himself from CA policies too. To avoid this situation, I would rather exclude two break glass accounts individually instead of as members of a group.
 Group exclusions can work when you have a big list of policy exceptions because you identified a problem. Group exclusion can work too, when you still use service accounts, and you need to exclude them from policies.
 >**Note** Be aware that anyone who has the rights to modify the group membership can make exclusions from the policy. This way can be potential for misuse, and because of this, you should monitor group membership changes.
 
@@ -118,7 +122,7 @@ Once you transfer your sign-in and audit logs to your Log Analytics workspace, y
 - **Configuration as a Code**
 
 CA policies are critical for protecting your cloud. Keep the management and monitoring tight and have control a hundred percent of the time.
-If you are serious about Infrastructure as Code, you can use M365 DSC for keeping your policies as code. This way, you can keep your CA configuration in the desired state. If you detect changes, you can audit or overwrite them. You can investigate more about M365 by going to the M365 DSC GitHub page.
+If you are serious about Infrastructure as Code, you can use M365 DSC for keeping your policies as code. This way, you can keep your CA configuration in the desired state. If you detect changes, you can audit or overwrite them. You can investigate more about Microsoft365DSC by going to the [Microsoft365DSC GitHub page](https://github.com/Microsoft/Microsoft365DSC/wiki).
 
 ### Business Continuity and Disaster Recovery (BCDR)
 
