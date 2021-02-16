@@ -62,11 +62,13 @@ When you have a considerable amount of policies naming conventions will be criti
 ```
 
 Example for production policy:
+
 ```
 P-Require_MFA-for-All_Users-All_Apps-when-on-External-network
 ```
 
 Example for test policies during the Ring implementation
+
 ```
 T-Block_Legacy_Authentication-for-R1-All_Apps
 T-Block_Legacy_Authentication-for-R2-All_Apps
@@ -74,6 +76,7 @@ T-Block_Legacy_Authentication-for-R3-All_Apps
 ```
 
 Transformed to production policy
+
 ```
 P-Block_Legacy_Authentication-for-All_Users-All_Apps
 ```
