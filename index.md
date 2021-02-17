@@ -4,9 +4,10 @@ layout: page
 Title: Start here
 ---
 
-![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
 
-Hi, I'm Darko Todoroski.
+
+![Darko Todoroski](/pages/darko.jpg){: width="350" .left} Hi, I'm Darko Todoroski.
+
 I write, speak, tweet, and share everything that I learn and I think is useful to be shared with the world or with myself.
 I'm part of the elite warriors at Microsoft, making the cloud look like a sun for our customers.
 
