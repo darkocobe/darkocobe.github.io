@@ -28,9 +28,6 @@
   {%- unless page.layout == "page" -%}
     {{ page.title | append: " | "}}
   {%- endunless -%}
-  {%- if page.layout == "home" -%}
-    {{ "Blog | "}}
-  {%- endif -%}
     {{ site.title }}
   </title>
 
