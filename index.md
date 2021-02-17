@@ -4,7 +4,7 @@ layout: page
 Title: Start here
 ---
 
-\
+
 
 ![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
 
