@@ -18,6 +18,7 @@ These quotes below explain the reason for starting my blog.
 "If you don’t produce, you won’t thrive - no matter how skilled or talented you are." - Cal Newport, Deep Work: Rules for Focused Success in a Distracted World
 
 I'm made in Macedonia ![Darko Todoroski](/pages/macedonia-s.png) and exported to The Netherlands. I share my life with my lovely wife and two sons. I love traveling and photography.
+
 I combat digital distraction and trying to live my life using technology but not be consumed by it. Your attention is the product that is being sold. - The Social Dilemma
 
 >"Simply put, humans are not wired to be constantly wired." - Cal Newport, Digital Minimalism: Choosing a Focused Life in a Noisy World
@@ -25,6 +26,7 @@ I combat digital distraction and trying to live my life using technology but not
 I build this world brick by brick, one small share at a time, and I will continue to do so. Thank you so much for your support, my reader.
 
 A share from you would help me a lot to grow this world.
+
 Therefore
 
 - Tweet it!

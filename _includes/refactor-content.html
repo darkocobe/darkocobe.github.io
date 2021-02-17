@@ -51,7 +51,7 @@
     = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' %}
 
   {% assign lozad_replacement = '<img src="'
-    | append: img_placehodler
+    | append: img_path_replacement
     | append: '" data-src="' %}
 
   {% assign _content = _content | replace: '<img src="', lozad_replacement %}
