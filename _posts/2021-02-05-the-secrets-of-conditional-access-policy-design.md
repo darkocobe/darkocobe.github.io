@@ -49,7 +49,7 @@ If you want to simplify your design and do not have an ample amount of policies,
 I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it [here](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview){:target="_blank"}. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
 The picture below shows how Microsoft is deploying Windows 10 Windows as a Service in separate Rings.
 
-![windows 10 - Windows as a Service](/assets/posts/windows-as-a-service-rings.jpg)
+![windows 10 - Windows as a Service](/posts/windows-as-a-service-rings.jpg)
 
 The strategy here is to organize your pilot participants in Ring groups (Azure AD Cloud groups) to test your policies. So, design a couple of Rings, preferably not more than three. Of course, this depends on the size of your organization, but don't overcomplicate. Once you design your deployment rings and inform pilot participants, you can use this Windows as a service idea to push the policies into production. You start with Ring 1 (a small set of users throughout the organization) to test your CA policy. Further, based on the outcome (telemetry and survey results) you proceed with extensive scope in Ring 2, Ring 3, and as a final step, you deploy to all users in production. Now you have a mechanism that will give you an idea of how the policies are working in your organization, do you have an impact, and if you do, it is easy to roll back with just removing the Ring group from the policy scope.
 
