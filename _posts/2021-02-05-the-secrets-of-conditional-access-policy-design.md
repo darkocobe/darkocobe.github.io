@@ -77,7 +77,7 @@ Naming convention structure and example during the Ring implementation:
 |Structure     |Description                                                                |
 |:-------------|:--------------------------------------------------------------------------|
 |**T/P**       |Test, Production                                                           |
-|**Control**   |Block, Allow, Requre configured control                                    |
+|**Control**   |Block, Allow, Require configured control                                   |
 |**Principal** |All or Single User(s), Individual or Ring group (R1,R2), Azure AD Role     |
 |**Cloud_App** |All or individual application(s)                                           |
 |**Conditions**|*(optional)* If there are conditions specified like network, platform etc. |
@@ -135,7 +135,7 @@ This challenge brings the RBAC to the table. It is critical to have control over
 
 Every change should be controlled and properly planned. The CA policy changes will be logged in the Azure AD audit logs. You need to keep these logs for a longer period so you can have full visibility. By default, Azure AD keeps the audit logs for 30 days only.
 
-Once you transfer your sign-in and audit logs to your Log Analytics workspace, you can analyze the CA policies using the built-in Conditional Acess Insights Workbook. You can implement your custom workbooks as well. Notify your admins if someone performed an unauthorized adjustment.
+Once you transfer your sign-in and audit logs to your Log Analytics workspace, you can analyze the CA policies using the built-in Conditional Access Insights Workbook. You can implement your custom workbooks as well. Notify your admins if someone performed an unauthorized adjustment.
 
 - **Configuration as a Code**
 
@@ -150,7 +150,7 @@ It is critical to pay attention to this stage because there is no undo button wh
 
 I visit organizations daily, and I must say that almost 90% of them do not have any procedure for backing up their CA policy configuration. I've seen many backup examples like word documents with screenshots, excel files with configuration settings, and many other options. I do not say that this is wrong, but it can be very inflexible, especially when you need to change any of those or restore all of them. Keeping these files up to date rarely happens. There are many community efforts to create solutions for CA policy documentation, and my preference is code. :)
 
-Therefore I suggest documenting all CA policies as code. And all changes that you perform always should go via code. This way will give you the opportunity even in the worse situations when by accident someone deletes all the policies with just one click to recreate/reenable all of them. The code approach will help with the Ring structure as well. The actual implementation steps will come in another blog post.
+Therefore I suggest documenting all CA policies as code. And all changes that you perform always should go via code. This way will give you the opportunity even in the worse situations when by accident someone deletes all the policies with just one click to recreate/re-enable all of them. The code approach will help with the Ring structure as well. The actual implementation steps will come in another blog post.
 
 ## Summary
 
