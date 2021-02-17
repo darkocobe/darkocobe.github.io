@@ -3,10 +3,12 @@ layout: page
 # Index page
 Title: Start here
 ---
+\
+\
 
+![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
 
-
-![Darko Todoroski](/pages/darko.jpg){: width="350" .left} Hi, I'm Darko Todoroski.
+Hi, I'm Darko Todoroski.
 
 I write, speak, tweet, and share everything that I learn and I think is useful to be shared with the world or with myself.
 I'm part of the elite warriors at Microsoft, making the cloud look like a sun for our customers.
@@ -18,7 +20,7 @@ These quotes below explain the reason for starting my blog.
 >"New ideas need audiences like flowers need bees. No matter how brilliant, they will die unless others work to spread them." - Simon Sinek
 "If you don’t produce, you won’t thrive - no matter how skilled or talented you are." - Cal Newport, Deep Work: Rules for Focused Success in a Distracted World
 
-I'm made in Macedonia ![Darko Todoroski](/pages/macedonia-s.png) and exported to The Netherlands. I share my life with my lovely wife and two sons. I love traveling and photography.
+I'm made in Macedonia ![Macedonian Flag](/pages/macedonia-s.png) and exported to The Netherlands ![The Netherlands Flag](/pages/netherlands-s.png). I share my life with my lovely wife and two sons. I love traveling and photography.
 
 I combat digital distraction and trying to live my life using technology but not be consumed by it. Your attention is the product that is being sold. - The Social Dilemma
 
