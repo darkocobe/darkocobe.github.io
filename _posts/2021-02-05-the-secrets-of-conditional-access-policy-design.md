@@ -57,29 +57,32 @@ The strategy here is to organize your pilot participants in Ring groups (Azure A
 
 When you have a considerable amount of policies naming conventions will be critical. A standardized naming convention will help you detect which policy is in production, the correct scope, the action, etc. When you dig inside Azure AD sign-in logs, it will be beneficial to have a good naming convention. From the policy name, you can identify why the policy applies or what should be the outcome. As long as you have a good naming convention that works for you, there is no poor choice. Microsoft has documentation with some naming convention proposal, but I extend this to my own.
 
-```
-|T/P-|Condition-|for-|Principal/R1-Cloud_App-|when-|Condtions|
-```
+Naming convention structure and example for the production policy:
 
-Example for production policy:
+|T/P-|Control-          |*for-*|Principal-   |Cloud_App-|*when-*|Conditions         |
+|:---|:-----------------|:-----|:------------|----------|:------|:------------------|
+|P-  |Require_MFA-      |for-  |All_Users-   |All_Apps  |when-  |on-External-network|
+|P-  |Block_Legacy_Auth-|for-  |All_Users-   |All_Apps  |       |                   |
 
-```
-P-Require_MFA-for-All_Users-All_Apps-when-on-External-network
-```
+Naming convention structure and example during the Ring implementation:
 
-Example for test policies during the Ring implementation
+|T/P-|Control-          |*for-*|Principal-   |Cloud_App-|*when-*|Conditions         |
+|:---|:-----------------|:-----|:------------|----------|:------|:------------------|
+|T-  |Block_Legacy_Auth-|for-  |R1-          |All_Apps  |       |                   |
+|T-  |Block_Legacy_Auth-|for-  |R2-          |All_Apps  |       |                   |
+|T-  |Block_Legacy_Auth-|for-  |R3-          |All_Apps  |       |                   |
 
-```
-T-Block_Legacy_Authentication-for-R1-All_Apps
-T-Block_Legacy_Authentication-for-R2-All_Apps
-T-Block_Legacy_Authentication-for-R3-All_Apps
-```
+**Explanation:**
 
-Transformed to production policy
+|Structure     |Description                                                                |
+|:-------------|:--------------------------------------------------------------------------|
+|**T/P**       |Test, Production                                                           |
+|**Control**   |Block, Allow, Requre configured control                                    |
+|**Principal** |All or Single User(s), Individual or Ring group (R1,R2), Azure AD Role     |
+|**Cloud_App** |All or individual application(s)                                           |
+|**Conditions**|*(optional)* If there are conditions specified like network, platform etc. |
 
-```
-P-Block_Legacy_Authentication-for-All_Users-All_Apps
-```
+I saw many examples where names contain version numbers, but I'm not in favor of this. Keep the versioning in your code repository. I do not see a reason why you would have the same policy different version applied. If the scope or control changed, then you need to create a new name.
 
 - **Plan your exclusions carefully**
 
