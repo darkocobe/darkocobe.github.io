@@ -25,7 +25,7 @@
   {% seo title=false %}
 
   <title>
-  {%- unless page.layout == "home" -%}
+  {%- unless page.layout == "page" -%}
     {{ page.title | append: " | "}}
   {%- endunless -%}
     {{ site.title }}

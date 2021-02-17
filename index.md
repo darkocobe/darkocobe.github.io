@@ -3,7 +3,7 @@ layout: page
 # Index page
 Title: Start here
 ---
-\
+
 \
 
 ![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
