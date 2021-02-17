@@ -45,7 +45,7 @@
 
   {% assign _content = _content | replace: '<img src="/', img_path_replacement %}
 
-  <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+  <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> 
   {% assign lozad = true %}
   {% assign img_placehodler
     = site.img_cdn %}
@@ -54,7 +54,7 @@
     | append: img_placehodler
     | append: '" data-src="' %}
 
-  {% assign _content = _content | replace: '<img src="', lozad_replacement %}
+  {% assign _content = _content | replace: '<img src="', lozad_replacement %}-->
 
 {% endif %}
 
