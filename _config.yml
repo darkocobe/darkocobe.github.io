@@ -25,7 +25,7 @@ description: >-                        # used by seo meta and the atom feed
   DevOps, Identity, etc. Occasionally some personal stories as well.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://darkocobe.github.io'
+url: 'https://idoazure.nl'
 
 author: Darko Todoroski                  # change to your full name
 
@@ -91,7 +91,7 @@ disqus:
   shortname: 'idoazure'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 5
-paginate_path: "/blog/page:num/"
+#paginate_path: "/blog/page:num/"
 
 # ------------ The following options are not recommended to be modified ------------------
 
