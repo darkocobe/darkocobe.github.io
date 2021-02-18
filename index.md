@@ -32,7 +32,7 @@ A share from you would help me a lot to grow this world.
 
 Therefore
 
-- [Tweet it!]("https://twitter.com/intent/tweet?text=New blog - I do Azure&url=https://idoazure.nl"){:target="_blank" data-toggle="tooltip" data-placement="top" title="" rel="noopener" aria-label="Twitter" data-original-title="Twitter"}
+- [Tweet it!](https://twitter.com/intent/tweet?url=https://idoazure.nl){:target="_blank" data-toggle="tooltip" data-placement="top" title="" rel="noopener" aria-label="Twitter" data-original-title="Twitter"}
 - Share to your favorite platform, blog, [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://idoazure.nl), etc.
 
 If you enjoy my writing, follow me for even greater things that come.
