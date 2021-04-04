@@ -21,7 +21,7 @@ These quotes below explain the reason for starting my blog.
 
 >"If you don’t produce, you won’t thrive - no matter how skilled or talented you are." - [Cal Newport, Deep Work: Rules for Focused Success in a Distracted World](https://www.amazon.com/dp/1455586692/ref=cm_sw_em_r_mt_dp_MDA1XVX6C2B5P3EJGBGB?_encoding=UTF8&psc=1){:target="_blank" rel="noopener"}
 
-I'm made in Macedonia ![Macedonian Flag](/pages/macedonia-s.png)}{:width="25" height="17"} and exported to The Netherlands ![The Netherlands Flag](/pages/netherlands-s.png){:width="25" height="16"}. I share my life with my lovely wife and two sons. I love traveling and photography.
+I'm made in Macedonia ![Macedonian Flag](/pages/macedonia-s.png){:width="25" height="17"} and exported to The Netherlands ![The Netherlands Flag](/pages/netherlands-s.png){:width="25" height="16"}. I share my life with my lovely wife and two sons. I love traveling and photography.
 
 I combat digital distraction and trying to live my life using technology but not be consumed by it. Your attention is the product that is being sold. - [The Social Dilemma](https://www.thesocialdilemma.com/the-film/){:target="_blank" rel="noopener"}
 
