@@ -46,7 +46,7 @@ If you want to simplify your design and do not have an ample amount of policies,
 
 - **Build Rings for testing policies**
 
-I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it [here](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview){:target="_blank"}. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
+I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it [here](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview){:target="_blank" rel="noopener"}. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
 The picture below shows how Microsoft is deploying Windows 10 Windows as a Service in separate Rings.
 
 ![windows 10 - Windows as a Service](/posts/windows-as-a-service-rings.jpg)
@@ -87,7 +87,7 @@ I saw many examples where names contain version numbers, but I'm not in favor of
 - **Plan your exclusions carefully**
 
 It was easy to lock down your access to the tenant in the past. These days thanks to the redesigned UI, it is difficult but not impossible. That is why it is critical to exclude the Emergency Break glass accounts from all block policies.
->If you don't know what Emergency Break glass accounts are, check this [documentation](https://docs.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access){:target="_blank"}.
+>If you don't know what Emergency Break glass accounts are, check this [documentation](https://docs.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access){:target="_blank" rel="noopener"}.
 
 Of course, the only exception here is the Block legacy authentication policy, which should apply to the Break glass accounts as well. Many organizations use groups to exclude break glass accounts from CA policies, but I'm not in favor of this approach. Using groups brings extra dependency on the exclusions, and that is group management privileges. If a user can get permission to modify group membership, that is potentially an option to exclude himself from CA policies too. To avoid this situation, I would rather exclude two break glass accounts individually instead of as members of a group.
 Group exclusions can work when you have a big list of policy exceptions because you identified a problem. Group exclusion can work too, when you still use service accounts, and you need to exclude them from policies.
@@ -140,7 +140,7 @@ Once you transfer your sign-in and audit logs to your Log Analytics workspace, y
 - **Configuration as a Code**
 
 CA policies are critical for protecting your cloud. Keep the management and monitoring tight and have control a hundred percent of the time.
-If you are serious about Infrastructure as Code, you can use M365 DSC for keeping your policies as code. This way, you can keep your CA configuration in the desired state. If you detect changes, you can audit or overwrite them. You can investigate more about Microsoft365DSC by going to the [Microsoft365DSC GitHub page](https://github.com/Microsoft/Microsoft365DSC/wiki){:target="_blank"}.
+If you are serious about Infrastructure as Code, you can use M365 DSC for keeping your policies as code. This way, you can keep your CA configuration in the desired state. If you detect changes, you can audit or overwrite them. You can investigate more about Microsoft365DSC by going to the [Microsoft365DSC GitHub page](https://github.com/Microsoft/Microsoft365DSC/wiki){:target="_blank" rel="noopener"}.
 
 ### Business Continuity and Disaster Recovery (BCDR)
 

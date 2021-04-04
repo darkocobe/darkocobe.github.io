@@ -6,7 +6,7 @@ Title: Start here
 
 
 
-![Darko Todoroski](/pages/darko.jpg){: width="350" height="236.59" .left}
+![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
 
 Hi, I'm Darko Todoroski.
 
