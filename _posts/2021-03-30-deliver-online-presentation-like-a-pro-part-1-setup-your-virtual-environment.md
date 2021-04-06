@@ -26,6 +26,7 @@ Let's get started.
 The virtual desktop in Windows 10 is an incredible feature, especially when you need to share your screen while presenting. You can separate your personal and work workspace on a different virtual desktop. Although this is not new nor requires too much explanation, it is a critical first step of delivering good presentations. De-cluttering the workspace and focus only on the demonstration is the primary point.
 On the taskbar, select Task view > New desktop or Win+Ctrl+D. Once you create the virtual desktop, you can switch between desktops using Win+Ctrl+ Left or Right Arrow depends which virtual desktop do you want to access.  
 ![Multiple virtual desktops](/posts/2020-03-30-virtual-desktops.jpg)  
+
 Now you have a fresh new virtual desktop for presenting, but that didn't clean your desktop. :) If your desktop looks like mine, like a mess, then read the next step.  
 If you are interested to learn more about virtual desktops check the article [Manage virtual desktop like a pro in Windows 10](https://community.windows.com/en-us/stories/virtual-desktop-windows-10){:target="_blank" rel="noopener"}
 
