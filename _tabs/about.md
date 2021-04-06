@@ -2,6 +2,7 @@
 #title: About
 icon: fas fa-info
 order: 1
+dynamic_title: true
 ---
 
 # Welcome to my online world  
