@@ -46,7 +46,7 @@ If you want to simplify your design and do not have an ample amount of policies,
 
 - **Build Rings for testing policies**
 
-I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can read more details about it [here](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview){:target="_blank" rel="noopener"}. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
+I hope you a familiar with the Microsoft Windows as a Service update strategy. If you are not, you can [read more details about it](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview){:target="_blank" rel="noopener"}. But this strategy is not the topic of our blog post. Instead, we are going to use a similar approach to push our CA policies into production.
 The picture below shows how Microsoft is deploying Windows 10 Windows as a Service in separate Rings.
 
 ![windows 10 - Windows as a Service](/posts/windows-as-a-service-rings.jpg)
