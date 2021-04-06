@@ -1,6 +1,6 @@
 ---
-Title: Start here
-icon: fas fa-map-pin
+Title: About
+icon: fas fa-info
 #fas fa-map-pin
 order: 1
 ---

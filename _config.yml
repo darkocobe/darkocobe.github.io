@@ -91,8 +91,7 @@ disqus:
   comments: true  # boolean type, the global switch for posts comments.
   shortname: 'idoazure'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
-paginate: 5
-#paginate_path: "/blog/page:num/"
+paginate: 10
 
 # ------------ The following options are not recommended to be modified ------------------
 
