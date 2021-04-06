@@ -28,7 +28,7 @@ On the taskbar, select Task view > New desktop or Win+Ctrl+D. Once you create th
 ![Multiple virtual desktops](/posts/2020-03-30-virtual-desktops.jpg)  
 
 Now you have a fresh new virtual desktop for presenting, but that didn't clean your desktop. :) If your desktop looks like mine, like a mess, then read the next step.  
-If you are interested to learn more about virtual desktops check the article [Manage virtual desktop like a pro in Windows 10](https://community.windows.com/en-us/stories/virtual-desktop-windows-10){:target="_blank" rel="noopener"}
+If you are interested to learn more about virtual desktops check the article [manage virtual desktop like a pro in Windows 10](https://community.windows.com/en-us/stories/virtual-desktop-windows-10){:target="_blank" rel="noopener"}
 
 ## Hide your desktop mess
 
