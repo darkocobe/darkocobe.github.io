@@ -4,7 +4,6 @@ author: Darko Todoroski
 date: 2020-02-05 20:55:00 +0800
 categories: [Azure, Conditional Access]
 tags: [azure, azure ad, aad, ca, policies, bcdr, plan, build, operate, design, conditional access policy, guide, conditional access]
-pin: true
 ---
 
 Almost every organization present on one of the three Microsoft clouds (Azure, M365, Dynamics 365) utilizes Azure AD Conditional Access policies. This lengthy blog post is for everyone that works with Conditional Access policies. No matter your role will extend your knowledge to make proper decisions when you design your conditional access policies.

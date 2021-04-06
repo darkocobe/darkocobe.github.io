@@ -4,6 +4,7 @@ author: Darko Todoroski
 date: 2020-03-30 19:55:00 +0800
 categories: [Productivity, Presenting]
 tags: [presenting, online, presentation, present, demo, setup, environment, Microsoft Teams, teams, PowerPoint, ZoomIt, Microsoft WhiteBoard, WhiteBoard]
+pin: true
 image:
   src: /posts/presenting-like-a-pro.jpg
 ---
