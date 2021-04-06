@@ -1,7 +1,7 @@
 ---
 title: The secrets of Conditional Access Policy Design
 author: Darko Todoroski
-date: 2020-02-05 20:55:00 +0800
+date: 2021-02-05 20:55:00 +0800
 categories: [Azure, Conditional Access]
 tags: [azure, azure ad, aad, ca, policies, bcdr, plan, build, operate, design, conditional access policy, guide, conditional access]
 ---

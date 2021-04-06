@@ -1,7 +1,7 @@
 ---
 title: "Deliver online presentation like a pro - Part 1: Setup your virtual environment"
 author: Darko Todoroski
-date: 2020-03-30 19:55:00 +0800
+date: 2021-03-30 19:55:00 +0800
 categories: [Productivity, Presenting]
 tags: [presenting, online, presentation, present, demo, setup, environment, Microsoft Teams, teams, PowerPoint, ZoomIt, Microsoft WhiteBoard, WhiteBoard]
 pin: true
