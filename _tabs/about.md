@@ -1,10 +1,10 @@
 ---
-title: Welcome to my online world
+title: About
 icon: fas fa-info
 order: 1
 ---
 
-
+## Welcome to my online world
 
 ![Darko Todoroski](/pages/darko.jpg){: width="350" .left}
 
