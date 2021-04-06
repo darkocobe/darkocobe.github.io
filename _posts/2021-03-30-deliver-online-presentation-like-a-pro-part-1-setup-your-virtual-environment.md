@@ -12,10 +12,15 @@ My job is to present. I present every day. Once per day, multiple times, or even
 This blog series will be all about presenting online, delivering demos, whiteboarding, and all using Microsoft Teams. Microsoft Teams is the primary tool I use every day to communicate with my customers.
 
 This blog post is the first from this series of blog posts.
+
 Part 1: Deliver online presentation like a pro - Part 1: Setup your virtual environment **(you are here)**
+
 Part 2: Deliver online presentation like a pro - Part 2: PowerPoint essentials *(coming)*
+
 Part 3: Deliver online presentation like a pro - Part 3: How to present PowerPoint using Microsoft Teams *(coming)*
+
 Part 4: Deliver online presentation like a pro - Part 4: How to demo using Microsoft Teams *(coming)*
+
 Part 5: Deliver online presentation like a pro - Part 5: How to whiteboard using Microsoft Teams *(coming)*
 
 Let's get started.
